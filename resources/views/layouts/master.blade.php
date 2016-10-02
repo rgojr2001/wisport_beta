@@ -5,31 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WiSport">
     <meta name="author" content="modded by RJ">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}">
 
     <title>WiSport V3.0</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" >
+    <link href="{{ URL::asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/icomoon.css">
-    <link href="assets/css/animate-custom.css" rel="stylesheet">
-
+    <link href="{{ URL::asset('assets/css/main.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/icomoon.css')}}">
+    <link href="{{ URL::asset('assets/css/animate-custom.css')}}" rel="stylesheet">
 
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/js/modernizr.custom.js')}}"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.js"></script>
-    <script src="assets/js/respond.min.js"></script>
+    <script src="{{ URL::asset('assets/js/html5shiv.js')}}"></script>
+    <script src="{{ URL::asset('assets/js/respond.min.js')}}"></script>
     <![endif]-->
+    <style>
+        #user_info > a {
+            color: rgb(52, 152, 219);
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
@@ -43,31 +47,30 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon icon-shield" style="font-size:30px; color:#3498db;"></span>
                 </button>
-                <a class="navbar-brand hidden-xs hidden-sm" href="#home"><span class="icon icon-home" style="font-size:18px; color:#3498db;"></span></a>
+                <a class="navbar-brand hidden-xs hidden-sm" href="/"><span class="icon icon-home" style="font-size:18px; color:#3498db;"></span></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/" class="smoothScroll">Home</a></li>
-                    <li> <a href="#" class="smoothScroll"> About</a></li>
+                    <li> <a href="about" class="smoothScroll"> About</a></li>
                     <li> <a href="schedule" class="smoothScroll"> Schedule</a></li>
-                    <li> <a href="#" class="smoothScroll"> Results</a></li>
-                    <li> <a href="#" class="smoothScroll"> Standings</a></li>
-                    <li> <a href="auth/login" class="smoothScroll"> Sign In</a></li>
-                    <li> <a href="#" class="smoothScroll"> Sign Up</a></li>
-                    <!--li>
-                        <?php /*
-                        $user = Auth::user();
-                        //echo 'Session;
-                        echo 'user logged in='.Auth::check();
-                            $letter = 'a';
-                        $id =  \App\Models\User::
-                                where('wisportId', 'like', 'WI'.$letter.'%')
-                                ->orderBy('wisportId','DESC')
-                                ->limit(1)
-                                ->first();
-                            echo $id->wisportId;*/
-                        ?>
-                    </li-->
+                    <li> <a href="results" class="smoothScroll"> Results</a></li>
+                    <li> <a href="standings" class="smoothScroll"> Standings</a></li>
+                    <?php
+                        if (!Auth::check()) {
+                            echo '<li> <a href="/auth/login" class="smoothScroll"> Sign In</a></li>';
+                            echo '<li> <a href="/auth/register" class="smoothScroll"> Sign Up</a></li>';
+                        }
+                        if (Auth::check()) {
+                            $user = Auth::user();
+                            if($user->paid==0){
+                                echo '<li> <a href="/auth/renewal/'.$user->wisportId.'" class="smoothScroll"> Renew</a></li>';
+                            }
+                            echo '<li> <a href="/auth/logout" class="smoothScroll"> Logout</a></li>';
+                            echo '<li id="user_info"><a href="#">Welcome '.$user->first_name.', '.$user->wisportId.'</a></li>';
+                            // The user is logged in...
+                        }
+                    ?>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -150,10 +153,10 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/retina.js"></script>
-<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="assets/js/smoothscroll.js"></script>
-<script type="text/javascript" src="assets/js/jquery-func.js"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/js/retina.js')}}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/js/jquery.easing.1.3.js')}}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/js/smoothscroll.js')}}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/js/jquery-func.js')}}"></script>
 </body>
 </html>

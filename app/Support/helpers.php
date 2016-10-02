@@ -19,10 +19,12 @@ function set_wisport_id($letter)
 
 function set_age_group($month,$year){
     $wisport_age = get_wisport_age($month,$year);
-    $age_id =  \App\App\Models\AgeGroup::where('upper', '>', $wisport_age)
-        ->where('lower', '<', $wisport_age)
+    #echo $month.' ',$year;
+    #dd($wisport_age);
+    $age_id =  \App\App\Models\AgeGroup::where('upper', '>=', $wisport_age)
+        ->where('lower', '<=', $wisport_age)
         ->first();
-    #dd($age_id->age_group_id);
+    #dd($age_id);
     return $age_id->age_group_id;
 }
 

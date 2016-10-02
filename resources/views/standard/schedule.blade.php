@@ -16,7 +16,7 @@
         <th>Flyer</th>
         </thead>
         <tbody>
-        @foreach ($schedule as $race)
+        @foreach ($schedule->races as $race)
             <tr>
                 <td><?php $date = new DateTime($race->date); echo $date->format('D, M j,Y '); ?></td>
                 <td><a href="#">{{ $race->name }}</a></td>

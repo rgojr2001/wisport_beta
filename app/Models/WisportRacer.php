@@ -3,9 +3,11 @@
 namespace App\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Racer;
 
 class WisportRacer extends Racer
 {
+    public $primaryKey = 'wisport_racer_id';
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +23,7 @@ class WisportRacer extends Racer
         'paid'
     ];
 
+    public $incrementing = false;
 
     public function user(){
         return $this->belongsTo('User');

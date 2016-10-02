@@ -1,8 +1,8 @@
 <?php
 
-namespace App\App\Models;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Racer extends Eloquent
 {

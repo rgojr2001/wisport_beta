@@ -18,9 +18,9 @@ Route::get('/race_page',        function () {return view('standard/race_page');}
 Route::get('/',                 'PagesController@index');
 Route::get('test_user',         'RacesController@results');
 Route::get('/schedule',         'SeasonsController@schedule');
-Route::get('/schedule/{id}',    'SeasonController@schedule');
-Route::get('/results/{id}',     'RaceController@show');
-Route::get('/results',          'RaceController@index');
+Route::get('/schedule/{id}',    'SeasonsController@schedule');
+Route::get('/results/{id}',     'RacesController@show');
+Route::get('/results',          'RacesController@index');
 
 Route::get('/home', 'HomeController@index');
 
@@ -33,3 +33,12 @@ Route::get('auth/logout', 'Auth\AuthController@logout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('auth/renewal/{wisport_id}', 'WisportRacersController@show');
+Route::post('auth/renewal/update/{id}', 'Auth\RenewalsController@update');
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::get('auth/renewal/{wisport_id}', 'WisportRacersController@show');
+    Route::post('auth/renewal/update', 'WisportRacersController@renew');
+    Route::get('auth/payment',        function () {return view('auth/payment');});
+});

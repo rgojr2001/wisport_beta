@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $fillable = [
-        'email', 'password','wisport_racer_id',
+        'email', 'password','wisport_racer_id','first_name','last_name',
     ];
 
     /**
@@ -45,6 +45,7 @@ class User extends Model implements AuthenticatableContract,
         $birthday = new \DateTime($data['birth_date']);
         $month = $birthday->format('m');
         $year = $birthday->format('Y');
+        #dd($year);
         #dd(substr($data['last_name'], 0,1));
         $user = new \App\User();
         $user->first_name=$data['first_name'];
@@ -58,10 +59,7 @@ class User extends Model implements AuthenticatableContract,
         $user->birth_date=set_age_group($month,$year);
         //$user->store;
         $user->save();
-        dd($user->wisportId);
+        #dd($user->wisportId);
         return $user;
     }
-
-
-    
 }

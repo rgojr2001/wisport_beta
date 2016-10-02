@@ -49,7 +49,6 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        var_dump($data);
         return Validator::make($data, [
             'first_name'    => 'required|max:255',
             'last_name'     => 'required|max:255',
@@ -67,39 +66,15 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $this->redirectTo = '/auth/payment';
         $user = User::create($data);
-        dd($user);
         return $user;
     }
-
+    
     public function getLogout()
     {
         $this->auth->logout();
         Session::flush();
         return redirect('/');
-    }
-
-    private function set_wisport_id($letter)
-    {
-        $wisport_id =  \App\Models\User::where('wisportId', 'like', 'WI'.$letter.'%')
-            ->orderBy('wisportId','DESC')
-            ->limit(1)
-            ->first();
-        return ++$wisport_id->wisportId;
-    }
-
-    private function set_age_group($month,$year){
-        $wisport_age = get_wisport_age($month,$year);
-        $age_id =  \App\Models\AgeGroup::where('upper', '>', $wisport_age)
-            ->where('lower', '<', $wisport_age)
-            ->get();
-        return $age_id->age_group_id;
-    }
-
-    private function get_wisport_age($m,$y){
-        $wisport_month = 6;
-        $wisport_year = 2017;
-        $age = $wisport_year-$y;
-        return ($m > $wisport_month) ? $age : $age-1;
     }
 }
