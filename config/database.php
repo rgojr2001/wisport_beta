@@ -52,17 +52,17 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
+      'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'rj2001_l5beta'),
-            'username' => env('DB_USERNAME', 'rj2001'),
-            'password' => env('DB_PASSWORD', 'W1Sp0rt'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', 'li63Psn7Zna9K26j2nEx'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
-            'strict' => false,
+            'strict' => true,
             'engine' => null,
         ],
 
