@@ -85,7 +85,7 @@
                                 <label for="birth_date" class="col-md-4 control-label">Date of Birth</label>
 
                                     <div class="col-md-6">
-                                    {!! Form::text('date', '', array('id' => 'datepicker','class' => 'form-control', 'name' => 'birth_date', 'placeholder' => 'm/dd/YYYY')) !!}
+                                    {!! Form::text('date', '', array('id' => 'datepicker','class' => 'form-control', 'name' => 'birth_date', 'placeholder' => 'mm/dd/YYYY')) !!}
 
                                     @if ($errors->has('birth_date'))
                                         <span class="help-block">
