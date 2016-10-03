@@ -55,8 +55,9 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
-
+    #'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'wisport@wisport.org', 'name' => 'RJ Ochmann'],
+    
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
