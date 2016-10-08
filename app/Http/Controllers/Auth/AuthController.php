@@ -79,7 +79,7 @@ class AuthController extends Controller
             $m->to($user->email, $user->first_name.' '.$user->last_name)->subject('WiSport Registration');
         });
         
-        dd($racer);
+        #dd($racer);
         return $user;
     }
     
