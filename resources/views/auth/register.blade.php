@@ -81,6 +81,20 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                <label for="name" class="col-md-4 control-label">Phone Number</label>
+
+                                <div class="col-md-6">
+                                    <input id="first->name" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
+
+                                    @if ($errors->has('phone'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('phone') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('birth_date') ? ' has-error' : '' }}">
                                 <label for="birth_date" class="col-md-4 control-label">Date of Birth</label>
 

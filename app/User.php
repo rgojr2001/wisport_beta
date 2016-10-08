@@ -42,9 +42,9 @@ class User extends Model implements AuthenticatableContract,
      */
     public static function create(array $data = array())
     {
-        $birthday = new \DateTime($data['birth_date']);
+        /*$birthday = new \DateTime($data['birth_date']);
         $month = $birthday->format('m');
-        $year = $birthday->format('Y');
+        $year = $birthday->format('Y');*/
         #dd($year);
         #dd(substr($data['last_name'], 0,1));
         $user = new \App\User();
@@ -53,10 +53,10 @@ class User extends Model implements AuthenticatableContract,
         $user->wisportId=set_wisport_id(substr($data['last_name'], 0, 1));
         $user->email=$data['email'];
         $user->password=bcrypt($data['password']);
-        $user->gender=$data['gender'];
-        $user->team=$data['team'];
-        $user->phone=$data['email'];
-        $user->birth_date=set_age_group($month,$year);
+        #$user->gender=$data['gender'];
+        #$user->team=$data['team'];
+        #$user->phone=$data['email'];
+        #$user->birth_date=set_age_group($month,$year);
         //$user->store;
         $user->save();
         #dd($user->wisportId);

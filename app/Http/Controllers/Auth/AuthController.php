@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\App\Models\WisportRacer;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Mail;
 
 class AuthController extends Controller
 {
@@ -67,7 +69,17 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         $this->redirectTo = '/auth/payment';
+        #dd($data);
         $user = User::create($data);
+        $data['user_id'] = $user->id;
+        $data['wisport_racer_id'] = $user->wisportId;
+        $racer = WisportRacer::create($data);
+        
+        Mail::send('standard.welcome_email', ['user' => $user], function ($m) use ($user) {
+            $m->to($user->email, $user->first_name.' '.$user->last_name)->subject('WiSport Registration');
+        });
+        
+        dd($racer);
         return $user;
     }
     

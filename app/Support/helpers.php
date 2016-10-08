@@ -14,7 +14,15 @@ function set_wisport_id($letter)
         ->limit(1)
         ->first();
     #dd(++$wisport_id->wisportId);
-    return ++$wisport_id->wisportId;
+    if($wisport_id)
+    {
+        return ++$wisport_id->wisportId;
+    }
+    else{
+        return 'WI'.strtoupper($letter).'0001';
+    }
+
+
 }
 
 function set_age_group($month,$year){
