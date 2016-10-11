@@ -12,14 +12,17 @@ class CreateAgeGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('age_groups', function (Blueprint $table) {
-            $table->increments('age_group_id');
-            $table->integer('upper');
-            $table->integer('lower');
-            $table->string('label');
-            $table->string('chart_val');
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('age_groups')) 
+        {
+            Schema::create('age_groups', function (Blueprint $table) {
+                $table->increments('age_group_id');
+                $table->integer('upper');
+                $table->integer('lower');
+                $table->string('label');
+                $table->string('chart_val');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

@@ -12,13 +12,16 @@ class CreateWisportRacersTable extends Migration
      */
     public function up()
     {
-        Schema::create('wisport_racers', function (Blueprint $table) {
-            $table->increments('wisport_racer_id')->unique();
-            $table->integer('team_id');
-            $table->date('dob');
-            $table->boolean('paid');
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('wisport_racers')) 
+        {
+            Schema::create('wisport_racers', function (Blueprint $table) {
+                $table->increments('wisport_racer_id')->unique();
+                $table->integer('team_id');
+                $table->date('dob');
+                $table->boolean('paid');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

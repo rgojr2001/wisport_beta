@@ -12,12 +12,15 @@ class CreateRacesTable extends Migration
      */
     public function up()
     {
-        Schema::create('races', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('season_id')->unsigned()->index();
-            $table->timestamps();
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('races')) 
+        {
+            Schema::create('races', function (Blueprint $table) {
+                $table->increments('id');
+                $table->integer('season_id')->unsigned()->index();
+                $table->timestamps();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

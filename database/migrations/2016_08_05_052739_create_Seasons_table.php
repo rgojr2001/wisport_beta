@@ -12,12 +12,15 @@ class CreateSeasonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('seasons', function (Blueprint $table) {
-            $table->increments('id');
-            $table->boolean('is_current_season');
-            $table->integer('year');
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('seasons')) 
+        {
+            Schema::create('seasons', function (Blueprint $table) {
+                $table->increments('id');
+                $table->boolean('is_current_season');
+                $table->integer('year');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

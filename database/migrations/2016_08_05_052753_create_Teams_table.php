@@ -12,11 +12,14 @@ class CreateTeamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('teamss', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('teamName');
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('teams')) 
+        {
+            Schema::create('teams', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('teamName');
+                $table->timestamps();
+            });
+        }
     }
 
     /**
