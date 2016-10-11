@@ -22,7 +22,6 @@ Route::get('/results/{id}',     'RacesController@show');
 Route::get('/results',          'RacesController@index');
 Route::post('email/register',   'EmailListController@register');
 
-Route::get('/home', 'HomeController@index'); #todo - find if there are any /home links
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
