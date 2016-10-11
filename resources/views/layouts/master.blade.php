@@ -96,7 +96,7 @@
 <div class="container" id="contact" name="contact">
     <div class="row">
         <br>
-        <h1 class="centered">THANKS FOR VISITING US</h1>
+        <h2 class="centered">THANKS FOR VISITING US</h2>
         <hr>
         <br>
         <br>
@@ -111,24 +111,23 @@
 
         <div class="col-lg-4">
             <h3>Newsletter</h3>
-            <p>Register to our newsletter and be updated with the latests information regarding our events, standings and much more.</p>
+            <p>Register for our newsletter and be updated with the latest information regarding our events, standings and much more.</p>
             <p>
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" method="POST" action="{{ url('email/register') }}">
+                {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="inputEmail1" class="col-lg-4 control-label"></label>
                     <div class="col-lg-10">
-                        <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="text1" class="col-lg-4 control-label"></label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" id="text1" placeholder="Your Name">
+                        <input type="email" class="form-control" id="email1" name="email" placeholder="Email">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-10">
-                        <button type="submit" class="btn btn-success">Sign in</button>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10">
+                        <button type="submit" class="btn btn-success">Subscribe</button>
                     </div>
                 </div>
             </form><!-- form -->
@@ -136,7 +135,11 @@
 
         <div class="col-lg-4">
             <h3>Support Us</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book.
+            </p>
         </div><!-- col -->
 
     </div><!-- row -->
