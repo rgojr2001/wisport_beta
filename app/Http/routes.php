@@ -15,6 +15,7 @@ Route::get('/race_page',        function () {return view('standard/race_page');}
 Route::get('/email/thank_you',  function () {return view('/email/thank_you');});
 
 Route::get('/',                 'PagesController@index');
+Route::get('/home',             'PagesController@index');
 Route::get('test_user',         'RacesController@results');
 Route::get('/schedule',         'SeasonsController@schedule');
 Route::get('/schedule/{id}',    'SeasonsController@schedule');
