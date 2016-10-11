@@ -7,7 +7,7 @@
     <meta name="author" content="modded by RJ">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}">
 
-    <title>WiSport V3.0</title>
+    <title>WiSport</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
