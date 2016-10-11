@@ -123,8 +123,6 @@
         <div class="container">
             <h1>CRAFTED IN WI.</h1>
             <hr>
-            <p>Some Address 987,</p>
-            <p>+34 9884 4893</p>
             <p><a class="icon icon-facebook" href="#"></a></p>
         </div><!-- container -->
 </section><!-- section -->

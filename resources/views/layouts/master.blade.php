@@ -102,7 +102,7 @@
         <br>
         <div class="col-lg-4">
             <h3>Contact Information</h3>
-            <p><span class="icon icon-home"></span> Some Address 987, WI<br/>
+            <p><span class="icon icon-home"></span> 10110 Welcome Ave N, Brooklyn Park, MN 55443<br/>
                 <span class="icon icon-phone"></span> 763-898-6065 <br/>
                 <span class="icon icon-envelop"></span> <a href="#"> wisport@wisport.org</a> <br/>
                 <span class="icon icon-facebook"></span> <a href="https://www.facebook.com/WiSport-Cycling-Group-161082763922189/"> WiSport Citizens Cycling </a> <br/>
