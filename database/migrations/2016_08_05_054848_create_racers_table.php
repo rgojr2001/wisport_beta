@@ -14,6 +14,11 @@ class CreateRacersTable extends Migration
     {
         Schema::create('racers', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('first');
+            $table->string('last');
+            $table->integer('age');
+            $table->integer('age_group_id');
+            $table->enum('gender',['M','F']);
             $table->timestamps();
         });
     }

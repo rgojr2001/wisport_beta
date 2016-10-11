@@ -12,8 +12,12 @@ class CreateAgeGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ageGroups', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('age_groups', function (Blueprint $table) {
+            $table->increments('age_group_id');
+            $table->integer('upper');
+            $table->integer('lower');
+            $table->string('label');
+            $table->string('chart_val');
             $table->timestamps();
         });
     }
@@ -25,6 +29,6 @@ class CreateAgeGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ageGroups');
+        Schema::drop('age_groups');
     }
 }

@@ -12,7 +12,13 @@ class CreateTeamResultsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('team_results', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('team_id');
+            $table->integer('race_id');
+            $table->integer('points');
+            $table->timestamps();
+        });
     }
 
     /**

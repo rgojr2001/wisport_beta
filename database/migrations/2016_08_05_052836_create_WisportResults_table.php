@@ -12,7 +12,13 @@ class CreateWisportResultsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('wisport_results', function (Blueprint $table) {
+            $table->increments('wisport_result_id');
+            $table->integer('wisport_racer_id');
+            $table->integer('race_id');
+            $table->integer('points');
+            $table->timestamps();
+        });
     }
 
     /**

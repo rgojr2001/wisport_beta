@@ -12,8 +12,10 @@ class CreateRaceTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('raceTypes', function (Blueprint $table) {
+        Schema::create('race_types', function (Blueprint $table) {
             $table->increments('id');
+            $table->enum('race_type',['CL','RR','TT','TR','TDLV']);
+            $table->string('label');
             $table->timestamps();
         });
     }
