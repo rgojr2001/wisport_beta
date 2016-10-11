@@ -3,7 +3,7 @@
 @stop
 @section('content')
     <!-- ==== HEADERWRAP ==== -->
-    <div id="headerwrap" id="home" name="home">
+    <div id="headerwrap" id="home" name="home" style="padding-top: 10px;">
         <header class="clearfix">
             <h1><img src="assets/img/nav-logo.png"></h1>
             <p>Bicycle Racing for the</p>
