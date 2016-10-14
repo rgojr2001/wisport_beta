@@ -20,9 +20,7 @@ Route::get('test_user',         'RacesController@results');
 Route::get('/schedule',         'SeasonsController@schedule');
 Route::get('/schedule/{id}',    'SeasonsController@schedule');
 Route::get('/results/{id}',     'RacesController@show');
-Route::get('/results',          'RacesController@index');
 Route::post('email/register',   'EmailListController@register');
-
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -42,3 +40,16 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('auth/renewal/update', 'WisportRacersController@renew');
     Route::get('auth/payment',        function () {return view('auth/payment');});
 });
+
+Route::controller('datatables', 'DatatablesController', [
+    'anyData'       => 'datatables.data',
+    'getIndex'      => 'datatables',
+]);
+
+Route::controller('seasons', 'SeasonsController', [
+    'anyData'       => 'seasons.data',
+    'getIndex'         => 'seasons',
+]);
+/*
+
+*/

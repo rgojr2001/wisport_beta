@@ -7,14 +7,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use \App\Models\Race;
 use \App\Models\Season;
+use \App\Models\RaceResult;
+use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\DB;
 
 class SeasonsController extends Controller
 {
-    public function index()
-    {
-        return view('standard.index');
-    }
-
     public function schedule()
     {
 
@@ -24,5 +22,15 @@ class SeasonsController extends Controller
 
         #$season = \DB::table('races')->where('season_id',2016)->get();
         return view('standard.schedule', ['schedule' => $season]);
+    }
+    
+    public function getIndex(){
+        return view('seasons.index');
+    }
+    
+    public function anyData(){
+        return Datatables::of(DB::table('processed_overall')
+            ->join('races','races.id','=','processed_overall.event_id')
+            ->select('short_name','place','first', 'last','gender','processed_overall.time','ag_label','ag_place'))->make(true);
     }
 }

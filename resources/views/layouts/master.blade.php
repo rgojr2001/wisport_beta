@@ -16,6 +16,7 @@
     <link href="{{ URL::asset('assets/css/main.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/icomoon.css')}}">
     <link href="{{ URL::asset('assets/css/animate-custom.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
@@ -195,5 +196,7 @@
 <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.easing.1.3.js')}}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/js/smoothscroll.js')}}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-func.js')}}"></script>
+<!-- DataTables -->
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 </body>
 </html>
