@@ -30,7 +30,7 @@ class SeasonsController extends Controller
     
     public function anyData(){
         return Datatables::of(DB::table('processed_overall')
-            ->join('races','races.id','=','processed_overall.event_id')
+            ->join('races','races.id','=','processed_overall.race_id')
             ->select('short_name','place','first', 'last','gender','processed_overall.time','ag_label','ag_place'))->make(true);
     }
 }
