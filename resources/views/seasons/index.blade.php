@@ -21,13 +21,17 @@
     <script>
         $(function() {
             $('#results-table').DataTable({
-
-                processing: true,
-                serverSide: true,
-
-                ajax: '{!! route('seasons.data') !!}',
-                type: 'POST',
-                columns: [
+                "processing": true,
+                "serverSide": true,
+                "scrollX": true,
+                "ajax": {
+                    "url": '{!! route('seasons.data') !!}',
+                    "type": 'POST',
+                    'headers': {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    }
+                },
+                "columns": [
                     { data: 'short_name', name: 'short_name' },
                     { data: 'place', name: 'place' },
                     { data: 'first', name: 'first' },
