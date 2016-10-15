@@ -1,11 +1,15 @@
 @extends('layouts.master')
-
+@section('header')
+    <!-- DataTables -->
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+@stop
 @section('content')
     <div class="container">
         <h2>Race Results</h2>
         <table class="table table-bordered" id="results-table">
             <thead>
             <tr>
+                <th>Date</th>
                 <th>Race</th>
                 <th>Place</th>
                 <th>First Name</th>
@@ -24,6 +28,7 @@
                 "processing": true,
                 "serverSide": true,
                 "scrollX": true,
+                "order": [[0, 'asc'],[2,'asc']],
                 "ajax": {
                     "url": '{!! route('seasons.data') !!}',
                     "type": 'POST',
@@ -32,6 +37,7 @@
                     }
                 },
                 "columns": [
+                    { data: 'date', name: 'date'},
                     { data: 'short_name', name: 'short_name' },
                     { data: 'place', name: 'place' },
                     { data: 'first', name: 'first' },

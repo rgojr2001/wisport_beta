@@ -24,7 +24,7 @@
 
     <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{ URL::asset('assets/js/modernizr.custom.js')}}"></script>
-
+    @yield('header')
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="{{ URL::asset('assets/js/html5shiv.js')}}"></script>
@@ -55,7 +55,7 @@
                     <li><a href="/" class="smoothScroll">Home</a></li>
                     <li> <a href="about" class="smoothScroll"> About</a></li>
                     <li> <a href="schedule" class="smoothScroll"> Schedule</a></li>
-                    <li> <a href="results" class="smoothScroll"> Results</a></li>
+                    <li> <a href="seasons" class="smoothScroll"> Results</a></li>
                     <li> <a href="standings" class="smoothScroll"> Standings</a></li>
                     <?php
                         if (!Auth::check()) {
@@ -196,7 +196,6 @@
 <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.easing.1.3.js')}}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/js/smoothscroll.js')}}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-func.js')}}"></script>
-<!-- DataTables -->
-<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
 </body>
 </html>
