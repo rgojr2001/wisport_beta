@@ -196,6 +196,6 @@
 <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.easing.1.3.js')}}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/js/smoothscroll.js')}}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-func.js')}}"></script>
-
+@yield('scripts')
 </body>
 </html>

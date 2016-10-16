@@ -26,7 +26,15 @@ class DatatablesController extends Controller
      */
     public function anyData()
     {
-        return Datatables::of(WisportRacer::query())->make(true);
+        $users = WisportRacer::select(['wisport_racer_id', 'first_name', 'last_name']);
+
+        return Datatables::of($users)
+            ->addColumn('action', function ($user) {
+                return '<a href="#edit-'.$user->wisport_racer_id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+            })
+            ->editColumn('wisport_racer_id', 'WiSport ID: {{$wisport_racer_id}}')
+            ->make(true);
+        #return Datatables::of(WisportRacer::query())->make(true);
     }
 
 }

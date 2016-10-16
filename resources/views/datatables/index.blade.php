@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('header')
+<link rel="stylesheet" href="{{ URL::asset('assets/css/buttons.dataTables.min.css')}}">
+<link rel="stylesheet" href="{{ URL::asset('assets/css/buttons.bootstrap.min.css')}}">
 <!-- DataTables -->
 <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <script src="{{ URL::asset('assets/js/dataTables.editor.min.js')}}"></script>
@@ -11,51 +13,29 @@
             <th>Wisport ID</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Action</th>
         </tr>
         </thead>
     </table>
 
 
     <script>
-        var editor; // use a global for the submit and return data rendering in the examples
-
-        $(document).ready(function() {
-            editor = new $.fn.dataTable.Editor( {
-                ajax: "{!! route('datatables.data') !!}",
-                table: "#users-table",
-                fields: [ {
-                    label: "WiSport ID:",
-                    name: "wisport_racer_id"
-                }, {
-                    label: "First name:",
-                    name: "first_name"
-                }, {
-                    label: "Last name:",
-                    name: "last_name"
-                }
-                ]
-            } );
-
-            $(function() {
-                $('#users-table').DataTable({
-                    processing: true,
-                    serverSide: true,
-                    ajax: '{!! route('datatables.data') !!}',
-                    columns: [
-                        { data: 'wisport_racer_id', name: 'wisport_racer_id' },
-                        { data: 'first_name', name: 'first_name' },
-                        { data: 'last_name', name: 'last_name'}
-                    ],
-                    select: true,
-                    buttons: [
-                        { extend: "create", editor: editor },
-                        { extend: "edit",   editor: editor },
-                        { extend: "remove", editor: editor }
-                    ]
-                });
-            });
-        } );
+        $('#users-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{!! route('datatables.data') !!}',
+            dom: 'Bfrtip',
+            buttons: ['csv', 'excel', 'pdf', 'print', 'reset', 'reload'],
+            columns: [
+                {data: 'wisport_racer_id', name: 'wisport_racer_id'},
+                {data: 'first_name', name: 'first_name'},
+                {data: 'last_name', name: 'last_name'},
+                {data: 'action', name: 'action', orderable: false, searchable: false}
+            ]
+        });
     </script>
 @stop
+@section('scripts')
 
+@stop
 

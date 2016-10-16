@@ -29,8 +29,9 @@ class SeasonsController extends Controller
     }
     
     public function anyData(){
-        return Datatables::of(DB::table('processed_overall')
-            ->join('races','races.id','=','processed_overall.race_id')
-            ->select('races.date','short_name','place','first', 'last','gender','processed_overall.time','ag_label','ag_place'))->make(true);
+        return Datatables::of(DB::table('race_results')
+            ->join('races','races.id','=','race_results.race_id')
+            ->join('age_groups','race_results.age_group_id','=','age_groups.age_group_id')
+            ->select('races.date','short_name','place','first', 'last','gender','race_results.time','age_groups.label','age_group_place'))->make(true);
     }
 }
