@@ -45,7 +45,7 @@
                     { data: 'last', name: 'last'},
                     { data: 'gender', name: 'gender' },
                     { data: 'label', name: 'label' },
-                    { data: 'age_group_place', name: 'ag_place' },
+                    { data: 'ag_place', name: 'ag_place' },
                     { data: 'time', name: 'race_results.time'}
 
                 ],
