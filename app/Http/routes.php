@@ -50,6 +50,9 @@ Route::controller('seasons', 'SeasonsController', [
     'anyData'       => 'seasons.data',
     'getIndex'         => 'seasons',
 ]);
+
+Route::get('/standings/overall',            'SeasonsController@getOverallStandings');
+Route::post('/standings/overall/data',      'SeasonsController@anyOverallStandingsData');
 /*
 
 */

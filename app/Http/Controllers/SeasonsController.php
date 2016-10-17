@@ -32,6 +32,18 @@ class SeasonsController extends Controller
         return Datatables::of(DB::table('race_results')
             ->join('races','races.id','=','race_results.race_id')
             ->join('age_groups','race_results.age_group_id','=','age_groups.age_group_id')
-            ->select('races.date','short_name','place','first', 'last','gender','race_results.time','age_groups.label','ag_place'))->make(true);
+            ->select('races.date','short_name','place','first', 'last','gender','race_results.time','age_groups.label','age_group_place'))->make(true);
+    }
+
+    public function getOverallStandings(){
+        return view('seasons.overall');
+    }
+
+    public function anyOverallStandingsData(){
+        return Datatables::of(DB::select( DB::raw('SELECT wr.first_name, wr.last_name, wr.gender, ag.label, sum(pw.points) as points FROM `wisport_racers` wr
+            join processed_wisport pw on pw.wisport_id = wr.wisport_racer_id
+            join age_groups ag on ag.age_group_id = wr.age_group_id
+            group by wr.wisport_racer_id
+            order by points desc')))->make(true);
     }
 }
