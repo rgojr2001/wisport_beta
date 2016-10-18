@@ -13,6 +13,7 @@
 
 Route::get('/race_page',        function () {return view('standard/race_page');});
 Route::get('/email/thank_you',  function () {return view('/email/thank_you');});
+Route::get('/test/{wisport_racer_id}',  'WisportRacersController@getRaceResults');
 
 Route::get('/',                 'PagesController@index');
 Route::get('/home',             'PagesController@index');

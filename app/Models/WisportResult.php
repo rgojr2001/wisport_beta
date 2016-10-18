@@ -1,8 +1,10 @@
 <?php
 
-namespace App\App\Models;
+namespace App\Models;
 
+use App\Models\Racer;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Result;
 
 class WisportResult extends Result
 {
@@ -15,5 +17,11 @@ class WisportResult extends Result
         'points',
         'wisport_age_group_place',
     ];
+
+    protected $table = 'wisportResults';
+
+    public function wisportRacer(){
+        return $this->hasOne(WisportResult::class);
+    }
 
 }

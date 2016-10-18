@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as Eloquent;;
 
-class Result extends Model
+class Result extends Eloquent
 {
     /**
      * The attributes that are mass assignable.

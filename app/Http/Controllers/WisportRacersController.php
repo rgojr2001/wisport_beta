@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\App\Models\WisportRacer;
+use App\Models\WisportRacer;
 use App\User;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Redirect;
-
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 
 class WisportRacersController extends RacersController
 {
@@ -40,4 +41,22 @@ class WisportRacersController extends RacersController
         //Session::flash('message', 'Successfully updated nerd!');
         return Redirect::to('/auth/payment');
     }
+
+    public function getRaceResults($id){
+        $wr = WisportRacer::find($id);
+        #$wr = WisportRacer::where('paid','=','1')->with('wisportResults')->->get()->sortByDesc('wisportResults.overallPoints');
+        #dd($wr);
+        return view('standard/test',['wisportRacer' => $wr]);/*
+        */
+        
+        #dd($all->get()->sortByDesc('wisportResults.overallPoints'));
+    }
+/*
+    public function getWisportRaceResults($id){
+        $wr = WisportRacer::find('WIO0004');
+        return view('standard/test',['wisportRacer' => $wr]);
+        #dd($wr->wisportResults());
+        #dd(DB::table('raceResults')->where('wisport_racer_id','=',$wr->wisport_racer_id)->select('first','last','time')->get());
+    }
+*/
 }

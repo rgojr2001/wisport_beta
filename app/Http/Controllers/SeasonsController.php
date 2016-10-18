@@ -40,10 +40,9 @@ class SeasonsController extends Controller
     }
 
     public function anyOverallStandingsData(){
-        return Datatables::of(DB::select( DB::raw('SELECT wr.first_name, wr.last_name, wr.gender, ag.label, sum(pw.points) as points FROM `wisport_racers` wr
-            join processed_wisport pw on pw.wisport_id = wr.wisport_racer_id
-            join age_groups ag on ag.age_group_id = wr.age_group_id
-            group by wr.wisport_racer_id
-            order by points desc')))->make(true);
+        $season = new Season();
+        $s = $season->sortOverallStandings();
+        #dd($s);
+        return Datatables::of($s)->make(true);
     }
 }

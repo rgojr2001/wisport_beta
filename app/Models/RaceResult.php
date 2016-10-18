@@ -3,13 +3,20 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Racer;
+use App\Models\WisportRacer;
 
-class RaceResult extends Model
+class RaceResult extends Result
 {
-    protected $table = 'processed_overall';
+    protected $table = 'raceResults';
 
     public function season()
     {
-        return $this->belongsTo(\App\Models\Season::class,\App\Models\Race::class);
+        return $this->belongsTo(Season::class,Race::class);
+    }
+
+    public function racer()
+    {
+         return $this->belongsTo(Racer::class);
     }
 }

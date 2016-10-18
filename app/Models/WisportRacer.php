@@ -1,9 +1,12 @@
 <?php
 
-namespace App\App\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Racer;
+use App\Models\Result;
+use App\Models\WisportResult;
+use App\Models\RaceResult;
 
 class WisportRacer extends Racer
 {
@@ -51,5 +54,29 @@ class WisportRacer extends Racer
         $wisport_racer->save();
         #dd($wisport_racer);
         return $wisport_racer;
+    }
+
+    public function results(){
+        return $this->hasMany(RaceResult::class);
+    }
+
+    public function ageGroup(){
+        return $this->hasOne(AgeGroup::class);
+    }
+    
+    public function wisportResults(){
+        return $this->hasMany(WisportResult::class);
+    }
+
+    public function overallPoints(){
+        return $this->wisportResults->sum('points');
+    }
+
+    public function ttPoints(){
+        return $this->wisportResults->where('race_type','TT')->sortByDesc('points')->take(5)->sum('points');
+    }
+
+    public function rrPoints(){
+        return $this->wisportResults->where('race_type','RR')->sortByDesc('points')->take(5)->sum('points');
     }
 }

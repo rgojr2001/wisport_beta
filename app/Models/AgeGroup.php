@@ -1,6 +1,6 @@
 <?php
 
-namespace App\App\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,4 +15,9 @@ class AgeGroup extends Model
         'lower', 'upper','label','letter_id'
     ];
 
+    protected $primaryKey  = 'age_group_id';
+
+    public function label(){
+        return $this->label;
+    }
 }

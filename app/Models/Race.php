@@ -50,5 +50,8 @@ class Race extends Model
     public function results(){
         return $this->hasMany(\App\Models\RaceResult::class);
     }
-    
+
+    public function racers(){
+        return $this->hasMany(\App\Models\Racers::class);
+    }
 }
