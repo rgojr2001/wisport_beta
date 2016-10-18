@@ -56,7 +56,7 @@
                     <li> <a href="about" class="smoothScroll"> About</a></li>
                     <li> <a href="schedule" class="smoothScroll"> Schedule</a></li>
                     <li> <a href="seasons" class="smoothScroll"> Results</a></li>
-                    <li> <a href="standings" class="smoothScroll"> Standings</a></li>
+                    <li> <a href="standings/overall" class="smoothScroll"> Standings</a></li>
                     <?php
                         if (!Auth::check()) {
                             echo '<li> <a href="/auth/login" class="smoothScroll"> Sign In</a></li>';
