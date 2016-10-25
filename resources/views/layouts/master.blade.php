@@ -196,7 +196,7 @@
 
 <span class="hidden-sm hidden-xs">
     <div id="footerwrap">
-        <div class="container hidden-sm hidden-xs">
+        <div class="container hidden-sm hidden-xs" style="background: #FFFFF">
             <img class="sponsor-logo" src="assets/img/sponsors/Borah-sm.jpg"/>
             <img class="sponsor-logo" src="assets/img/sponsors/fezzari_header.png"/>
             <img class="sponsor-logo" src="assets/img/sponsors/hed.jpg"/>
