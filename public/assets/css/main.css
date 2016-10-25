@@ -654,3 +654,9 @@ a:after {
 .page_header {
 	margin-top: 120px;
 }
+
+.disabled
+{
+	color:Grey;
+	text-decoration:none;
+}

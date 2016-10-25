@@ -66,10 +66,21 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/" class="smoothScroll">Home</a></li>
-                    <li> <a href="{!! url('about') !!}" class="smoothScroll"> About</a></li>
+                    <li> <a href="#" class="smoothScroll"> About</a></li>
                     <li> <a href="{!! url('schedule') !!}" class="smoothScroll"> Schedule</a></li>
                     <li> <a href="{!! url('seasons') !!}" class="smoothScroll"> Results</a></li>
-                    <li> <a href="{!! url('standings/overall') !!}" class="smoothScroll"> Standings</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Standings<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{!! url('standings/overall') !!}">Overall</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" style="color: #a9a9a9">Age Group - All</a></li>
+                            <li><a href="#" style="color: #a9a9a9">Age Group - TT</a></li>
+                            <li><a href="#" style="color: #a9a9a9">Age Group - RR</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" style="color: #a9a9a9">Most Wins</a></li>
+                        </ul>
+                    </li>
                     <?php
                         if (!Auth::check()) {
                             echo '<li> <a href="/auth/login" class="smoothScroll"> Sign In</a></li>';
