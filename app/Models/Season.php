@@ -40,6 +40,47 @@ class Season extends Model
                 ]); 
             }
         }
-        return $standings_table;
+        return $standings_table->sortByDesc(['gender','points']);
+    }
+
+    public function sortAgeGroupStandings(){
+        $s = WisportRacer::where('paid','=','1')
+                            ->with('wisportResults')->get();
+        $standings_table_tt = new Collection();
+
+        foreach($s as $season_total){
+            $agLabel = AgeGroup::find($season_total->age_group_id);
+            #($season_total->ttPoints());
+            if($season_total->ttPoints()>0){
+                $standings_table_tt->push([
+                    'first'         => $season_total->first_name,
+                    'last'          => $season_total->last_name,
+                    'gender'        => $season_total->gender,
+                    'ag_label'      => $agLabel['label'],
+                    'competition'   => 'TT',
+                    'points'        => $season_total->ttPoints()
+                ]);
+            }
+        }
+        
+        foreach($s as $season_total){
+            $agLabel = AgeGroup::find($season_total->age_group_id);
+            if($season_total->rrPoints()>0){
+                $standings_table_tt->push([
+                    'first'     => $season_total->first_name,
+                    'last'      => $season_total->last_name,
+                    'gender'    => $season_total->gender,
+                    'competition'   => 'RR',
+                    'ag_label'  => $agLabel['label'],
+                    'points'    => $season_total->rrPoints()
+                ]);
+            }
+        }
+
+        $tt = $standings_table_tt->sortBy(function($standings_table_tt) {
+            return sprintf('%-12s%s',$standings_table_tt['gender'], $standings_table_tt['competition'], $standings_table_tt['ag_label'], $standings_table_tt['points']);
+        });
+
+        return $tt;
     }
 }

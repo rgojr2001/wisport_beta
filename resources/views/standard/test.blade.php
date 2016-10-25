@@ -41,19 +41,35 @@
         <div class="title">Laravel 5</div>
     </div>
     <?php
-        $race_test = \App\Models\Race::where('id',201601)->get()->first();
+        /*$race_test = \App\Models\Race::where('id',201601)->get()->first();
         #var_dump($race_test);
         #echo $race_test->results();
-        foreach($race_test->results as $result)
+        */
+    echo '<br>';
+        foreach($wisportRacer as $result)
         {
-            echo $result;
+            echo $result->first_name.' '.$result->last_name.'<br>';
         }
 
-        /*foreach($schedule->races as $event)
-        {
-            echo $event->name.' - ';
-            echo $event->date.'<br/><br/>';
-        }*/
+
+    #var_dump($race_test);
+    #echo $race_test->results();
+        #dd($wisportRacer->results);
+    echo 'overall points: '.$wisportRacer->overallPoints('wio0004').'<br>';
+    echo 'rr points: '.$wisportRacer->rrPoints('wio0004').'<br>';
+    echo 'tt points: '.$wisportRacer->ttPoints('wio0004').'<br>';
+    /*
+    foreach($wisportRacer->wisportResults as $result)
+    {
+        echo $result;
+    }
+
+
+    /*foreach($schedule->races as $event)
+    {
+        echo $event->name.' - ';
+        echo $event->date.'<br/><br/>';
+    }*/
     ?>
 
 </div>

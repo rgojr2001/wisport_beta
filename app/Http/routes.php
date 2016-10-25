@@ -54,6 +54,8 @@ Route::controller('seasons', 'SeasonsController', [
 
 Route::get('/standings/overall',            'SeasonsController@getOverallStandings');
 Route::post('/standings/overall/data',      'SeasonsController@anyOverallStandingsData');
+Route::get('/standings/ageGroup',            'SeasonsController@getAgeGroupStandings');
+Route::post('/standings/ageGroup/data',      'SeasonsController@anyAgeGroupStandingsData');
 /*
 
 */

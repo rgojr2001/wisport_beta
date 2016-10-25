@@ -3,12 +3,12 @@
 @stop
 @section('content')
     <!-- ==== HEADERWRAP ==== -->
-    <div id="headerwrap" id="home" name="home" style="padding-top: 10px;">
-        <header class="clearfix">
+    <div id="headerwrap" id="home" name="home">
+        <!--header class="clearfix">
             <h1><img src="assets/img/nav-logo.png"></h1>
             <p>Bicycle Racing for the</p>
             <p> Normally Obsessed</p>
-        </header>
+        </header-->
     </div><!-- /headerwrap -->
     <!-- ==== GREYWRAP ==== -->
     <div id="greywrap">

@@ -42,11 +42,24 @@
 
 <div id="navbar-main">
     <!-- Fixed navbar -->
+
     <div class="navbar navbar-inverse navbar-fixed-top">
+        <span class="hidden-sm hidden-xs">
+            <div id="page-header" style=" background: #FFFFFF;">
+                <div class="container" style="height: 100px; padding-top: 10px; ">
+                    <span id="shift-left">
+                        <img id="top-nav-logo" src="assets/img/top-nav-logo.png"/>
+                    </span>
+                    <span id="search" style="font-size: 40px;float: right; margin-top: 10px;">
+                        Bicycle Racing for the Normally Obsessed
+                    </span>
+                </div>
+            </div>
+        </span>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon icon-shield" style="font-size:30px; color:#3498db;"></span>
+                    <span class="icon icon-shield" style="font-size:48px; color:#3498db;"></span>
                 </button>
                 <a class="navbar-brand hidden-xs hidden-sm" href="/"><span class="icon icon-home" style="font-size:18px; color:#3498db;"></span></a>
             </div>
@@ -181,11 +194,18 @@
 
 </div><!-- container -->
 
-<div id="footerwrap">
-    <div class="container">
-
+<span class="hidden-sm hidden-xs">
+    <div id="footerwrap">
+        <div class="container hidden-sm hidden-xs">
+            <img class="sponsor-logo" src="assets/img/sponsors/Borah-sm.jpg"/>
+            <img class="sponsor-logo" src="assets/img/sponsors/fezzari_header.png"/>
+            <img class="sponsor-logo" src="assets/img/sponsors/hed.jpg"/>
+            <img class="sponsor-logo" src="assets/img/sponsors/THlogo-sm.gif"/>
+            <img class="sponsor-logo" src="assets/img/sponsors/Waterford_sponsor.png"/>
+        </div>
     </div>
-</div>
+</span>
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

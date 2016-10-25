@@ -34,12 +34,9 @@ class WisportRacer extends Racer
 
     public static function create(array $data = array())
     {
-        #dd($data);
         $birthday = new \DateTime($data['birth_date']);
         $month = $birthday->format('m');
         $year = $birthday->format('Y');
-        #dd(set_age_group($month,$year));
-        #dd(substr($data['last_name'], 0,1));
         $wisport_racer = new WisportRacer();
         $wisport_racer->user_id=$data['user_id'];
         $wisport_racer->first_name=$data['first_name'];
@@ -50,9 +47,8 @@ class WisportRacer extends Racer
         $wisport_racer->phone=$data['phone'];
         $wisport_racer->dob=date('Y-m-d', strtotime($data['birth_date']));
         $wisport_racer->age_group_id=set_age_group($month,$year);
-        //$user->store;
         $wisport_racer->save();
-        #dd($wisport_racer);
+        
         return $wisport_racer;
     }
 
