@@ -193,7 +193,7 @@
     </div><!-- row -->
 
 </div><!-- container -->
-
+<div class="fix" style="height: 75px;"></div>
 <span class="hidden-sm hidden-xs">
     <div id="footerwrap">
         <div class="container hidden-sm hidden-xs" style="background: #FFFFF">
