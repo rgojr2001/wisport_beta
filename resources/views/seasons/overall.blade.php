@@ -23,7 +23,6 @@
             var table = $('#overall-table').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "order":[[3,'desc'],[4,'asc'],[5,'desc']],
                 "ajax": {
                     "url": '{!! url('standings/overall/data') !!}',
                     "type": 'POST',
@@ -33,10 +32,10 @@
                 },
                 "columns": [
                     { data: 'first', name: 'first' },
-                    { data: 'last', name: 'last'},
-                    { data: 'gender', name: 'gender',targets:[2],orderData:[2,3,4] },
-                    { data: 'ag_label', name: 'ag_label',targets:[3],orderData:[2,3,4] },
-                    { data: 'points', name: 'points',targets:[4],orderData:[2,3,4]}
+                    { data: 'last', name: 'last' },
+                    { data: 'gender', name: 'gender' },
+                    { data: 'ag_label', name: 'ag_label' },
+                    { data: 'points', name: 'points' }
 
                 ]
             });
