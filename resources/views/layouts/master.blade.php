@@ -48,7 +48,7 @@
             <div id="page-header" style=" background: #FFFFFF;">
                 <div class="container" style="height: 100px; padding-top: 10px; ">
                     <span id="shift-left">
-                        <img id="top-nav-logo" src="assets/img/top-nav-logo.png"/>
+                        <img id="top-nav-logo" src="{{ asset('assets/img/top-nav-logo.png') }}"/>
                     </span>
                     <span id="search" style="font-size: 40px;float: right; margin-top: 10px;">
                         Bicycle Racing for the Normally Obsessed
@@ -197,11 +197,11 @@
 <span class="hidden-sm hidden-xs">
     <div id="footerwrap">
         <div class="container hidden-sm hidden-xs" style="background: #FFFFF">
-            <img class="sponsor-logo" src="assets/img/sponsors/Borah-sm.jpg"/>
-            <img class="sponsor-logo" src="assets/img/sponsors/fezzari_header.png"/>
-            <img class="sponsor-logo" src="assets/img/sponsors/hed.jpg"/>
-            <img class="sponsor-logo" src="assets/img/sponsors/THlogo-sm.gif"/>
-            <img class="sponsor-logo" src="assets/img/sponsors/Waterford_sponsor.png"/>
+            <img class="sponsor-logo" src="{{ asset('assets/img/sponsors/Borah-sm.jpg') }}"/>
+            <img class="sponsor-logo" src="{{ asset('assets/img/sponsors/fezzari_header.png') }}"/>
+            <img class="sponsor-logo" src="{{ asset('assets/img/sponsors/hed.jpg') }}"/>
+            <img class="sponsor-logo" src="{{ asset('assets/img/sponsors/THlogo-sm.gif') }}"/>
+            <img class="sponsor-logo" src="{{ asset('assets/img/sponsors/Waterford_sponsor.png') }}"/>
         </div>
     </div>
 </span>
