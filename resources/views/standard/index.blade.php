@@ -4,12 +4,34 @@
 @section('content')
     <!-- ==== HEADERWRAP ==== -->
     <div id="headerwrap" id="home" name="home">
+        <img src="assets/img/Ken_and_RRR.jpg">
         <!--header class="clearfix">
             <h1><img src="assets/img/nav-logo.png"></h1>
             <p>Bicycle Racing for the</p>
             <p> Normally Obsessed</p>
         </header-->
     </div><!-- /headerwrap -->
+
+    <!-- ==== GREYWRAP ==== -->
+    <div id="ken">
+        <div class="container">
+            <div class="row">
+                <br/><br/>
+                    <p>As many of you may have already heard, we recently lost another long-standing Wisport friend to
+                    heart-breaking circumstances. Ken Myszkewicz has been the victim of a tragic crime in his own home.
+                    We have been told the Janesville newspaper has been the most accurate source for news during this
+                    ordeal, so have attached the link here:</p>
+                    <p><a href="http://www.gazettextra.com/20161026/whitewater_man_charged_with_murdering_his_brother_in_law">
+                        GazzetteExtra - Whitewater man charged with murdering his brother-in-law
+                    </a></p>
+                    <p>Please respect the Myszkewicz’s privacy as they cope with this catastrophe. We will post updates
+                    regarding funeral arrangements etc. as they occur. In the meantime, keep Kim, Tyler, and the
+                    whole family in your thoughts and prayers during this difficult time.</p><br/><br/>
+            </div><!-- row -->
+        </div>
+    </div><!-- greywrap -->
+
+
     <!-- ==== GREYWRAP ==== -->
     <div id="greywrap">
         <div class="row">

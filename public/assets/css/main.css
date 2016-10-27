@@ -273,11 +273,12 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/firehouse50.jpg) no-repeat center top;
-	/*margin-top: -50px;*/
-	padding-top:190px;
+	/*background: url(../img/Ken_and_RRR.jpg) no-repeat center top;
+	margin-top: 50px;
+	/*padding-top:190px;
+
+	background-attachment: relative;*/
 	text-align:center;
-	/*background-attachment: relative;*/
 	background-position: center center;
 	min-height: 480px;
 	width: 100%;
