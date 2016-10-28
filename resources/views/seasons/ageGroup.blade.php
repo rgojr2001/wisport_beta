@@ -25,7 +25,6 @@
             var table = $('#overall-table').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "order": [[5, 'desc'],[3, 'asc']],
                 "ajax": {
                     "url": '{!! url('standings/ageGroup/data') !!}',
                     "type": 'POST',

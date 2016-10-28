@@ -57,4 +57,9 @@ class SeasonsController extends Controller
         #dd($s);
         return Datatables::of($s)->make(true);
     }
+
+    public function leaderboard(){
+        $season = new Season();
+        return view('seasons.leaderboard',['leaders' => $season->getLeaderboard()]);
+    }
 }

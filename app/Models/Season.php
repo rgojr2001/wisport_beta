@@ -83,4 +83,12 @@ class Season extends Model
 
         return $tt;
     }
+
+
+    public function getLeaderboard(){
+        $leaderboard = new Collection();
+        $leaderboard_ov = getOverallLeaders();
+
+        return $leaderboard->combine($leaderboard_ov);
+    }
 }

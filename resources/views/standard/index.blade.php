@@ -26,7 +26,22 @@
                     </a></p>
                     <p>Please respect the Myszkewicz’s privacy as they cope with this catastrophe. We will post updates
                     regarding funeral arrangements etc. as they occur. In the meantime, keep Kim, Tyler, and the
-                    whole family in your thoughts and prayers during this difficult time.</p><br/><br/>
+                    whole family in your thoughts and prayers during this difficult time.</p>
+
+                <h2>Update(10/27/2016):</h2>
+
+                <p>Per Whitewater Family Church:</p>
+
+                <p>Memorial Services for Ken Myszkewicz will be held Sunday October 30th at Crosspointe Community Church in Whitewater. Visitation will begin at 2:00pm and last until Approximately 4:00pm at which time there will be a time of remembrance and celebration of Ken's life. Those in attendance should feel free to wear their favorite Bicycling Jersey because that's the way he would have wanted it.</p>
+
+                <p>Questions about the service or the needs of the family can be directed to the Pastoral Staff of Whitewater Family Church as they will be partnering with CrossPointe in the handling the arrangements of the service.</p>
+
+                <p>We thank you in advance for your continued support of the family at this most difficult time, and ask that as a community we continue to rally around them to show our love and appreciation. Please feel free to share this post so that all who wish to remember and celebrate Ken's life have the opportunity to do so.</p>
+
+                <p>The Whitewater Family Church Staff can be reached at 262-473-2755
+                Crosspointe Community Church is located at 445 N. Warner Rd.
+                Whitewater, WI 53190</p>
+                <br/><br/>
             </div><!-- row -->
         </div>
     </div><!-- greywrap -->
