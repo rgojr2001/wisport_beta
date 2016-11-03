@@ -20,8 +20,14 @@ class WisportResult extends Result
 
     protected $table = 'wisportResults';
 
+    protected $primaryKey = 'wisport_points_id';
+
     public function wisportRacer(){
         return $this->hasOne(WisportResult::class);
+    }
+
+    public function Race(){
+        return $this->belongsTo(Race::class);
     }
 
 }

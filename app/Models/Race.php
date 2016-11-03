@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 class Race extends Model
@@ -51,7 +52,30 @@ class Race extends Model
         return $this->hasMany(\App\Models\RaceResult::class);
     }
 
+    public function wisportResults(){
+        return $this->hasMany(\App\Models\WisportResult::class);
+    }
+
     public function racers(){
-        return $this->hasMany(\App\Models\Racers::class);
+        return $this->hasMany(\App\Models\Racer::class);
+    }
+
+    public function wisportRacers(){
+        return $this->hasMany(\App\Models\WisportRacer::class);
+    }
+
+    public function winners($gender){
+
+        $results = \App\Models\Race::where('race_id',$this->id)->where('gender',$gender);
+        dd($results);
+        /*$winner = new Collection();
+        $winner->push($results->wisportResults());*/
+        #dd($this->wisportResults());
+        foreach ($results->wisportResults as $rider){
+             echo $rider[2];
+        }
+        #dd($winner);
+        return;# $winner->push($this->wisportResults()->where('gender',$gender));
+        #$winner = '';
     }
 }

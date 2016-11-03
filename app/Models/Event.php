@@ -17,4 +17,12 @@ class Event extends Model
         'location',
         'map_link',
     ];
+
+    public function races(){
+        return $this->hasMany(\App\Models\Race::class);
+    }
+
+    public function seasons(){
+        return $this->hasMany(\App\Models\Season::class);
+    }
 }

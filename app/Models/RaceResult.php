@@ -8,7 +8,7 @@ use App\Models\WisportRacer;
 
 class RaceResult extends Result
 {
-    protected $table = 'raceResults';
+    protected $table = 'race_results';
 
     public function season()
     {
@@ -18,5 +18,10 @@ class RaceResult extends Result
     public function racer()
     {
          return $this->belongsTo(Racer::class);
+    }
+
+    public function wisportRacer()
+    {
+        return $this->belongsTo(WisportRacer::class);
     }
 }

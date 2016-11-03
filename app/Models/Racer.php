@@ -17,6 +17,14 @@ class Racer extends Eloquent
 
     public function season()
     {
-        return $this->belongsTo('Season');
+        return $this->belongsToMany(\App\Models\Season::class);
+    }
+
+    public function races(){
+        return $this->belongsToMany(\App\Models\Race::class);
+    }
+
+    public function raceResults(){
+        return $this->hasMany(\App\Models\Result::class);
     }
 }

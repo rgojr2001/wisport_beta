@@ -25,6 +25,14 @@ class Season extends Model
         return $this->hasMany(\App\Models\WisportRacer::class);
     }
 
+    public function wisportResults(){
+        return $this->hasMany(\App\Models\WisportResult::class);
+    }
+
+    public function teamResults(){
+        return $this->hasMany(\App\App\Models\TeamResult::class);
+    }
+
     public function sortOverallStandings(){
         $s = WisportRacer::where('paid','=','1')->with('wisportResults')->get();
         $standings_table = new Collection();
@@ -86,9 +94,12 @@ class Season extends Model
 
 
     public function getLeaderboard(){
+
         $leaderboard = new Collection();
         $leaderboard_ov = getOverallLeaders();
-
-        return $leaderboard->combine($leaderboard_ov);
+        $leaderboard_ww = getWorldsWinners();
+        dd($leaderboard_ww);
+        $leaderboard->push($leaderboard_ov)->push($leaderboard_ww);
+        return $leaderboard;
     }
 }

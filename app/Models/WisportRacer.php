@@ -52,10 +52,6 @@ class WisportRacer extends Racer
         return $wisport_racer;
     }
 
-    public function results(){
-        return $this->hasMany(RaceResult::class);
-    }
-
     public function ageGroup(){
         return $this->hasOne(AgeGroup::class);
     }
@@ -74,5 +70,9 @@ class WisportRacer extends Racer
 
     public function rrPoints(){
         return $this->wisportResults->where('race_type','RR')->sortByDesc('points')->take(5)->sum('points');
+    }
+
+    public function team(){
+        return $this->hasOne(\App\Models\Team::class);
     }
 }
